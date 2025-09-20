@@ -1,0 +1,476 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+:root {
+  --light: #f9f9f9;
+  --blue: #1b6763;
+  --light-blue: #f5f5f5;
+  --grey: #fff;
+  --dark-grey: #aaaaaa;
+  --dark: #342e37;
+  --red: #1b6763;
+  --yellow: #ffce26;
+  --light-yellow: #fff2c6;
+  --orange: #fd7238;
+  --light-orange: #ffe0d3;
+}
+
+body.dark {
+  --light: #0c0c1e;
+  --grey: #151515;
+  --dark: #fff;
+}
+
+body {
+  background: var(--grey);
+}
+
+/* SIDEBAR */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: var(--light);
+  z-index: 2000;
+  transition: 0.3s ease;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+#sidebar.hide {
+  width: 70px;
+}
+
+#sidebar .brand {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  margin-left: 11px;
+  background: var(--light);
+  z-index: 500;
+}
+
+#sidebar {
+  padding-left: 10px;
+}
+
+#sidebar .side-menu {
+  width: 100%;
+  margin-top: 5px;
+}
+
+#sidebar .side-menu li {
+  height: 48px;
+  background: transparent;
+  border-radius: 48px 0 0 48px;
+  padding: 8px;
+}
+
+#sidebar .side-menu li.active {
+  background: var(--grey);
+  position: relative;
+}
+
+#sidebar .side-menu li.active::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: -40px;
+  right: 0;
+  box-shadow: 20px 20px 0 var(--grey);
+  z-index: -1;
+}
+
+#sidebar .side-menu li.active::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  bottom: -40px;
+  right: 0;
+  box-shadow: 20px -20px 0 var(--grey);
+  z-index: -1;
+}
+
+#sidebar .side-menu li a {
+  width: 100%;
+  height: 100%;
+  background: var(--light);
+  display: flex;
+  align-items: center;
+  border-radius: 48px;
+  font-size: 16px;
+  font-weight: bolder;
+  color: var(--dark);
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+#sidebar .side-menu.top li.active a {
+  color: var(--blue);
+}
+
+#sidebar.hide .side-menu li a {
+  width: calc(48px - (4px * 2));
+  transition: width 0.3s ease;
+}
+
+#sidebar .side-menu li a.logout {
+  color: var(--red);
+}
+
+#sidebar .side-menu.top li a:hover {
+  color: var(--blue);
+}
+
+#sidebar .side-menu li a .dash-icon {
+  min-width: calc(60px - ((4px + 6px) * 2));
+  display: flex;
+  justify-content: center;
+}
+
+/* CONTENT */
+#content {
+  position: relative;
+  width: calc(100% - 230px);
+  left: 230px;
+  transition: 0.3s ease;
+}
+
+#sidebar.hide ~ #content {
+  width: calc(100% - 40px);
+  left: 40px;
+}
+
+/* NAVBAR */
+#content nav {
+  height: 66px;
+  background: var(--light);
+  padding-left: 35px;
+  display: flex;
+  /* align-items: center; */
+  justify-content: end;
+  position: sticky;
+  z-index: 1000;
+}
+
+#content nav::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  bottom: -40px;
+  left: 0;
+  border-radius: 50%;
+  box-shadow: -20px -20px 0 var(--light);
+}
+
+#content nav a {
+  color: var(--dark);
+}
+
+#content nav .icon-pro-font {
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+#content nav .dash-icon.dash-icon-menu {
+  cursor: pointer;
+  color: var(--dark);
+}
+
+#content nav .nav-link {
+  /* font-weight: 700; */
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+#content nav .nav-link:hover {
+  color: var(--blue);
+}
+
+#content nav form {
+  max-width: 200px;
+  width: 50%;
+}
+
+#content nav .switch-mode {
+  display: block;
+  min-width: 45px;
+  height: 20px;
+  border-radius: 25px;
+  background: var(--grey);
+  cursor: pointer;
+  position: relative;
+}
+
+#content nav .switch-mode::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  width: calc(20px - 4px);
+  background: var(--blue);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+#content nav #switch-mode:checked + .switch-mode::before {
+  left: calc(100% - (25px - 4px) - 2px);
+}
+
+/* MAIN */
+#content main {
+  width: 100%;
+  padding: 5px 0px 0px 28px;
+}
+
+#content main .head-title {
+  padding-top: 10px;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  grid-gap: 16px;
+  flex-wrap: wrap;
+  background: var(--light);
+}
+
+#content main .head-title .left .breadcrumb {
+  display: flex;
+  align-items: center;
+  grid-gap: 16px;
+}
+
+#content main .head-title .left .breadcrumb li {
+  color: var(--dark);
+}
+
+#content main .head-title .left .breadcrumb li .activeproname {
+  color: var(--dark);
+  pointer-events: none;
+}
+
+#content main .head-title .left .breadcrumb li a.active {
+  color: var(--blue);
+  pointer-events: unset;
+}
+
+#content main .box-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 24px;
+  margin-top: 36px;
+}
+
+#content main .box-info li {
+  padding: 24px;
+  background: var(--light);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  grid-gap: 24px;
+}
+
+#content main .box-info li .dash-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content main .box-info li:nth-child(1) .dash-icon {
+  background: var(--light-blue);
+  color: var(--blue);
+}
+
+#content main .box-info li:nth-child(2) .dash-icon {
+  background: var(--light-yellow);
+  color: var(--yellow);
+}
+
+#content main .box-info li:nth-child(3) .dash-icon {
+  background: var(--light-orange);
+  color: var(--orange);
+}
+
+#content main .box-info li .text h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+#content main .box-info li .text p {
+  color: var(--dark);
+}
+
+@media screen and (max-width: 1250px) {
+  #content nav .nav-link {
+    font-weight: 700;
+    font-size: 13px;
+    transition: 0.3s ease;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #sidebar {
+    width: 200px;
+  }
+
+  #content {
+    width: calc(100% - 60px);
+    left: 200px;
+  }
+
+  #content nav .nav-link {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #content nav form.show ~ .notification,
+  #content nav form.show ~ .profile {
+    display: none;
+  }
+
+  #content main .box-info {
+    grid-template-columns: 1fr;
+  }
+
+  #content main .table-data .head {
+    min-width: 420px;
+  }
+
+  #content main .table-data .order table {
+    min-width: 420px;
+  }
+
+  #content main .table-data .todo .todo-list {
+    min-width: 420px;
+  }
+}
+
+/* Drawer Container */
+.MuiDrawer-root {
+  z-index: 9999 !important;
+  /* Ensure drawer appears above other elements */
+}
+
+/* Drawer Paper (the actual visible part of the drawer) */
+.MuiPaper-root {
+  z-index: 9999 !important;
+  position: fixed;
+  width: 300px;
+  /* Adjust as per your layout needs */
+  height: 100vh;
+  background-color: #ffffff;
+  /* Background color */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  /* Optional shadow */
+  padding: 20px;
+  overflow-y: auto;
+  /* Scroll for overflow if content exceeds */
+}
+
+/* Side Menu Styling */
+@media screen and (max-width: 991px) {
+  .big-screen-res {
+    display: none;
+  }
+}
+
+.side-menu.mobil-nav-pro {
+  list-style: none;
+  margin: 0;
+}
+
+.side-menu.mobil-nav-pro li {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.side-menu.mobil-nav-pro li:hover {
+  background-color: #f0f0f0;
+}
+
+.side-menu.mobil-nav-pro li.active {
+  background-color: #d4edda;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.side-menu.mobil-nav-pro li a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.side-menu.mobil-nav-pro li a .dash-icon {
+  margin-right: 10px;
+  font-size: 18px;
+  /* Adjust icon size */
+}
+
+.side-menu.mobil-nav-pro li a .text {
+  font-size: 16px;
+  /* Adjust text size */
+}
+
+.navbar-toggler {
+  background-color: #1b6763;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  border: none; /* Optional: remove border if not needed */
+  font-size: 1.2rem;
+  color: #fff;
+  margin-right: 5px;
+}
+
+.navbar-toggler-icon {
+  display: none; /* Hides the default Bootstrap icon */
+}
+
+.navbar-toggler::before {
+  content: "\2630"; /* Unicode for ☰ */
+  font-size: 1rem;
+  color: #fff;
+  display: block;
+  line-height: 1;
+}

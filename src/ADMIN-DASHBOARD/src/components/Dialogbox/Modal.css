@@ -1,0 +1,200 @@
+/* Overlay container */
+.modal-overlayy {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Semi-transparent background */
+.modal-backdropp {
+  position: fixed;
+  inset: 0;
+  background: #080808c2;
+  /* backdrop-filter: blur(15px); */
+  z-index: 9999;
+  /* keep below content */
+}
+
+/* Modal box */
+.modal-contentt {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  margin: 16px;
+  z-index: 10000;
+  padding: 30px 50px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 891px; /* default fallback */
+}
+
+/* Fullscreen mode */
+.modal-contentt.fullscreen {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+/* Close button */
+.modal-close-btnn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  color: #6b7280;
+  font-size: 18px;
+  transition: all 0.2s ease;
+  z-index: 10001;
+}
+
+.modal-close-btnn:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+
+/* Size variations */
+.modal-contentt.sm {
+  max-width: 495px;
+}
+
+.modal-contentt.md {
+  max-width: 700px;
+}
+
+.modal-contentt.lg {
+  max-width: 891px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1f2937;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-body {
+  max-height: 350px;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  height: 51px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn-cancel {
+  padding: 8px 16px;
+  border: 1px solid #ff797e;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  color: #ff797e;
+}
+
+.btn-submit {
+  width: 116px;
+  height: 35px;
+  background: #ff797e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+.file-upload-box {
+  border: 1px solid #d1d5db;
+  padding: 15px 20px;
+  border-radius: 12px;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Hide the ugly default input */
+.file-upload-box input[type="file"] {
+  display: none;
+}
+
+/* Label acts like our custom button */
+.file-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Custom button */
+.file-btn {
+  background: #fff;
+  border: 1px solid #ebebed;
+  padding: 3px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: #000;
+  transition: background 0.2s ease;
+  height: 20px;
+  width: 80px;
+  font-size: 9px;
+}
+
+/* File text */
+.file-text {
+  color: #000;
+  font-size: 9px;
+}

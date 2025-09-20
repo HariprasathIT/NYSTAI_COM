@@ -1,0 +1,476 @@
+@media (max-width: 600px) {
+  .Protect-plan-page-text-nys {
+    padding: 25px 10px 35px 10px;
+  }
+
+  .reveal-text h2 {
+    font-size: 34px;
+    text-align: start;
+  }
+
+  .Protect-plan-page-text-nys p {
+    font-size: 14px;
+    text-align: justify;
+    color: #8c8c8c;
+  }
+}
+
+@media (min-width: 601px) {
+  .reveal-text h2 {
+    font-size: 55px;
+    text-align: center;
+  }
+
+  .Protect-plan-page-text-nys p {
+    font-size: 15px;
+    text-align: center;
+    color: #8c8c8c;
+  }
+
+  .Protect-plan-page-text-nys {
+    padding: 70px 0px 60px 0px;
+  }
+}
+
+/*text animation for heading */
+:root {
+  --delay: 0;
+  --duration: 2000ms;
+  --iterations: 1;
+}
+
+.reveal-text,
+.reveal-text::after {
+  animation-delay: var(--animation-delay, 2s);
+  animation-iteration-count: var(--iterations, 1);
+  animation-duration: var(--duration, 1000ms);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.reveal-text {
+  --animation-delay: var(--delay, 0);
+  --animation-duration: var(--duration, 1000ms);
+  --animation-iterations: var(--iterations, 1);
+  position: relative;
+  animation-name: clip-text;
+  color: #fff;
+}
+
+.reveal-text::after {
+  content: "";
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1b6763;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+  animation-name: text-revealer;
+}
+
+@keyframes clip-text {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes text-revealer {
+  0%,
+  50% {
+    transform-origin: 0 50%;
+  }
+
+  60%,
+  100% {
+    transform-origin: 100% 50%;
+  }
+
+  60% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+/* build your system */
+.build-ur-systems-nys {
+  background-color: #f5f5f5;
+}
+
+.build-ur-systems-nys div {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.build-ur-systems-nys h2 {
+  font-size: 2.8rem;
+  font-weight: 500;
+}
+
+.build-ur-systems-nys p {
+  font-size: 1.25rem;
+  color: grey;
+}
+
+/* plan comparision */
+.proComparisionTable {
+  overflow-x: auto;
+}
+
+.comparisionTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comparisionTable th,
+.comparisionTable td {
+  padding: 8px;
+  text-align: center;
+  /* border: 1px solid #ddd; */
+  border-bottom: 1px solid #dddddd75;
+}
+
+.comparisionTable th.proHeading {
+  background-color: #f2f2f2;
+}
+
+.comparisionTable th.no-bdr {
+  border: none;
+}
+
+.proSelectBtn a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1b6763;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#vehicle-details .proComparisionContainer {
+  width: 100%;
+}
+
+#vehicle-details .proComparisionContainer .comparisionTable {
+  font-size: 14px;
+  margin: 0 !important;
+  width: 100%;
+  /* border-right: 1px solid #ececec; */
+}
+
+#vehicle-details .proComparisionContainer .comparisionTable td {
+  min-width: 199px;
+  padding: 18px;
+  text-align: center;
+  font-size: 13px;
+  color: grey;
+  /* background-color: #ffffff; */
+  /* border: 1px solid #ececec; */
+  vertical-align: middle;
+}
+
+#vehicle-details .proComparisionContainer .comparisionTable .pro-img {
+  vertical-align: bottom;
+}
+
+#vehicle-details .proComparisionContainer .comparisionTable th div {
+  color: #231f20;
+  padding: 10px 0px;
+}
+
+#vehicle-details
+  .proComparisionContainer
+  .comparisionTable
+  thead
+  tr
+  th:last-child {
+  border-right: 2px solid #ffffff !important;
+}
+
+#vehicle-details
+  .proComparisionContainer
+  .comparisionTable
+  tbody
+  tr:last-child
+  td:last-of-type {
+  border-right: 2px solid #ffffff !important;
+}
+
+#vehicle-details
+  .proComparisionContainer
+  .comparisionTable
+  tbody
+  tr
+  th:first-child {
+  width: 400px;
+  text-align: left;
+}
+
+#vehicle-details
+  .proComparisionContainer
+  .comparisionTable
+  tbody
+  tr
+  td.proSelectBtn {
+  position: relative;
+  border: none;
+}
+
+#vehicle-details
+  .proComparisionContainer
+  .comparisionTable
+  tbody
+  tr
+  td.proSelectBtn
+  a {
+  text-transform: uppercase;
+  font-size: 14px;
+  display: inline-block;
+  padding: 9px 27px;
+  border-radius: 5px;
+  color: #fff;
+  margin: 15px 5px 5px 5px;
+}
+
+#vehicle-details
+  .proComparisionContainer
+  .comparisionTable
+  tbody
+  tr
+  td.proSelectBtn
+  a:hover {
+  background-color: #f5f5f5;
+  color: #1b6763;
+}
+
+#vehicle-details
+  .proComparisionContainer
+  .comparisionTable
+  tbody
+  tr
+  td.terminalImg
+  img {
+  max-width: 100px;
+}
+
+#vehicle-details .proComparisionContainer .comparisionTable .proHeading {
+  /* background-color: #fff; */
+  padding: 22px;
+  font-size: 14px;
+  color: #5a5a5a;
+  font-weight: normal;
+}
+
+#vehicle-details .proComparisionContainer .proComparisionBtn {
+  display: none;
+  position: relative;
+}
+
+#vehicle-details .proComparisionContainer .proComparisionBtn span {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 22px;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  position: absolute;
+  top: 120px;
+  z-index: 100;
+}
+
+#vehicle-details
+  .proComparisionContainer
+  .proComparisionBtn
+  span#left_scroll_tbl {
+  left: 250px;
+}
+
+#vehicle-details
+  .proComparisionContainer
+  .proComparisionBtn
+  span#right_scroll_tbl {
+  right: -40px;
+}
+
+@media (max-width: 576px) {
+  .comparisionTable th,
+  .comparisionTable td {
+    padding: 4px;
+  }
+
+  .proSelectBtn a {
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  #vehicle-details
+    .proComparisionContainer
+    .comparisionTable
+    tbody
+    tr
+    th:first-child {
+    min-width: 165px;
+  }
+
+  .proComparisionContainer {
+    padding: 0 10px;
+  }
+
+  .proSelectBtn a {
+    padding: 8px 16px;
+  }
+
+  .comparisionTable th,
+  .comparisionTable td {
+    padding: 6px;
+  }
+
+  #vehicle-details .proComparisionContainer .comparisionTable td,
+  #vehicle-details .proComparisionContainer .comparisionTable th {
+    min-width: 165px;
+  }
+
+  #vehicle-details
+    .proComparisionContainer
+    .proComparisionBtn
+    span#left_scroll_tbl {
+    left: 10px;
+  }
+
+  #vehicle-details
+    .proComparisionContainer
+    .proComparisionBtn
+    span#right_scroll_tbl {
+    left: 135px;
+  }
+}
+
+@media (max-width: 991px) {
+  #vehicle-details
+    .proComparisionContainer
+    .proComparisionBtn
+    span#left_scroll_tbl {
+    left: 30px;
+  }
+
+  #vehicle-details
+    .proComparisionContainer
+    .proComparisionBtn
+    span#right_scroll_tbl {
+    right: auto;
+    left: 250px;
+  }
+}
+
+/* Right Left Card */
+.ser-ourservices-sec {
+  .services-types-head {
+  }
+
+  .services-types-head p {
+    color: #8c8c8c;
+  }
+
+  .services-types-head h2 {
+    color: #1b6763;
+  }
+
+  /* card contents */
+  .service-our-serv-card {
+  }
+
+  .service-our-serv-card .card-body {
+  }
+
+  .service-our-serv-card .card-title {
+    color: #1b6763;
+    font-size: 25px;
+  }
+
+  .service-our-serv-card .card-text {
+    color: #8c8c8c;
+    text-align: justify;
+  }
+}
+
+.ser-header-sec {
+  .card-title {
+    color: #1b6763;
+    font-size: 30px;
+  }
+
+  .card-text {
+    color: #8c8c8c;
+    text-align: justify;
+    font-size: 16px;
+  }
+}
+
+/* For mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .Protect-plan-page-text-nys {
+    padding: 25px 15px 35px 15px;
+    /* extra side padding for mobile */
+  }
+
+  .reveal-text h2 {
+    font-size: 28px;
+    text-align: left;
+  }
+
+  .Protect-plan-page-text-nys p {
+    font-size: 14px;
+    text-align: left;
+  }
+}
+
+/* For small tablets (601px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .Protect-plan-page-text-nys {
+    padding: 50px 30px 50px 30px;
+  }
+
+  .reveal-text h2 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .Protect-plan-page-text-nys p {
+    font-size: 15px;
+    text-align: center;
+  }
+}
+
+/* For desktop (above 900px) */
+@media (min-width: 901px) {
+  .Protect-plan-page-text-nys {
+    padding: 70px 0px 60px 0px;
+  }
+
+  .reveal-text h2 {
+    font-size: 55px;
+    text-align: center;
+  }
+
+  .Protect-plan-page-text-nys p {
+    font-size: 16px;
+    text-align: center;
+  }
+}

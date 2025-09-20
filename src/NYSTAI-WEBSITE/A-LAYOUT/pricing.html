@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            color: hsl(233, 13%, 49%);
+            margin: 3.3rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            color: hsl(233, 13%, 49%);
+            border-radius: 0.8rem;
+        }
+
+        .cards .card.active {
+            display: flex;
+            align-items: center;
+            transform: scale(1.1);
+            z-index: 1;
+        }
+
+        .shadow {
+            box-shadow: -5px 5px 15px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card.active .price {
+            color: #fff;
+        }
+
+
+
+        .pricing-card {
+            width: 18rem;
+            overflow: hidden;
+            border-radius: 30px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.432);
+        }
+
+        .card-top {
+            background: white;
+            text-align: center;
+            padding: 20px;
+            height: 50%;
+        }
+
+        .card-top p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .card-bottom {
+            position: relative;
+            height: 50%;
+            overflow: hidden;
+        }
+
+        .card-bottom img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .card-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.247);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .card-overlay h5 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .card-overlay ul li {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            color: white;
+           text-align: start;
+        }
+
+        .card-overlay ul li::before {
+            content: '✔';
+            color: white;
+            /* White tick */
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .card-overlay ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .card-overlay ul li {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .card-overlay .btn {
+            margin-top: 10px;
+            padding: 10px 30px;
+            border: none;
+            outline: none;
+        }
+
+
+
+        @media (max-width: 280px) {
+            ul {
+                margin: 1rem;
+            }
+
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            .toggle {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                height: 80px;
+            }
+
+            .cards {
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .card {
+                transform: scale(0.8);
+                margin-bottom: 1rem;
+            }
+
+            .cards .card.active {
+                transform: scale(0.8);
+            }
+        }
+
+        @media (min-width: 280px) and (max-width: 320px) {
+            ul {
+                margin: 20px;
+            }
+
+            .cards {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .card {
+                margin-bottom: 1rem;
+            }
+
+            .cards .card.active {
+                transform: scale(1);
+            }
+        }
+
+        @media (min-width: 320px) and (max-width: 414px) {
+            .cards {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .card {
+                margin-bottom: 1rem;
+            }
+
+            .cards .card.active {
+                transform: scale(1);
+            }
+        }
+
+        @media (min-width: 414px) and (max-width: 768px) {
+            .card {
+                margin-bottom: 1rem;
+                margin-right: 1rem;
+            }
+
+            .cards .card.active {
+                transform: scale(1);
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1046px) {
+            .cards {
+                display: flex;
+            }
+
+            .card {
+                margin-bottom: 1rem;
+                margin-right: 1rem;
+            }
+
+            .cards .card.active {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>PRICING TABLE</h1>
+    </header>
+    <div class="cards">
+        <div class="card shadow">
+            <div class="pricing-card">
+                <div class="card-top" style="height: 20vh">
+                    <p>$20</p>
+                    <span>PER MONTH</span>
+                </div>
+                <div class="card-bottom" style="height: 30vh">
+                    <img src="5902.jpg" alt="Card Background" />
+                    <div class="card-overlay text-start">
+                        <h5>BASIC</h5>
+                        <ul>
+                            <li>Data 500GB</li>
+                            <li>Speed upto 500mbps</li>
+                            <li>Unlimited local calls</li>
+                            <li>Amazon prime 1 year</li>
+                        </ul>
+                        <button class="btn bg-white" style="border-radius: 30px">
+                            Choose
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card shadow active">
+            <div class="pricing-card">
+                <div class="card-top" style="height: 20vh">
+                    <p>$20</p>
+                    <span>PER MONTH</span>
+                </div>
+                <div class="card-bottom" style="height: 30vh">
+                    <img src="5902.jpg" alt="Card Background" />
+                    <div class="card-overlay text-start">
+                        <h5>BASIC</h5>
+                        <ul>
+                            <li>Data 500GB</li>
+                            <li>Speed upto 500mbps</li>
+                            <li>Unlimited local calls</li>
+                            <li>Amazon prime 1 year</li>
+                        </ul>
+                        <button class="btn bg-white" style="border-radius: 30px">
+                            Choose
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card shadow">
+            <div class="pricing-card">
+                <div class="card-top" style="height: 20vh">
+                    <p>$20</p>
+                    <span>PER MONTH</span>
+                </div>
+                <div class="card-bottom" style="height: 30vh">
+                    <img src="5902.jpg" alt="Card Background" />
+                    <div class="card-overlay text-start">
+                        <h5>BASIC</h5>
+                        <ul>
+                            <li>Data 500GB</li>
+                            <li>Speed upto 500mbps</li>
+                            <li>Unlimited local calls</li>
+                            <li>Amazon prime 1 year</li>
+                        </ul>
+                        <button class="btn bg-white" style="border-radius: 30px">
+                            Choose
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      
+    </div>
+</body>
+
+</html>
