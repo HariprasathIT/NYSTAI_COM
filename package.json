@@ -16,7 +16,7 @@
     "@headlessui/react": "^2.1.2",
     "@heroicons/react": "^2.1.5",
     "@material-tailwind/react": "^2.1.9",
-    "@mui/icons-material": "^6.1.10",
+    "@mui/icons-material": "^5.15.21",
     "@mui/material": "^5.15.21",
     "@react-spring/web": "^9.7.4",
     "@testing-library/jest-dom": "^5.17.0",
