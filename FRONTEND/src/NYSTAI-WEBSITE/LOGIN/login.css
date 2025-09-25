@@ -1,0 +1,162 @@
+.auth-modal {
+  backdrop-filter: blur(5px);
+  background-color: #ffffffa2;
+}
+
+.auth-modal .modal-dialog {
+  max-width: 1004px;
+  margin: 1.75rem auto;
+}
+
+.auth-modal .modal-content {
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: none;
+  overflow: hidden;
+  padding: 0px;
+}
+
+.auth-header {
+  background: none;
+  padding-right: 15px;
+  border-bottom: none;
+}
+
+.auth-header .btn-clos {
+  filter: invert(1);
+  opacity: 0.8;
+  background-color: #ff797e !important;
+}
+
+.auth-header .btn-clos:hover {
+  opacity: 1;
+}
+
+.auth-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.auth-body {
+  padding: 30px;
+  background: #fff;
+}
+
+.auth-form {
+  width: 100%;
+}
+
+.auth-label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.auth-input {
+  border: 1px solid #bdbdbd;
+  border-radius: 10px;
+  padding: 12px 15px;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  height: 39px;
+}
+
+.auth-input:focus {
+  border-color: #ff797e;
+  box-shadow: none;
+  background: none;
+}
+
+.auth-submit-btn {
+  background: #ff797e !important;
+  border: none !important;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  margin-top: 15px;
+  height: 39px;
+  color: #fff !important;
+}
+
+/* Hover */
+.auth-submit-btn:hover {
+  background: #ff797eb6 !important;
+  color: #fff !important;
+}
+
+/* Focus */
+.auth-submit-btn:focus {
+  background: #ff797e !important;
+  border: none !important;
+  box-shadow: none !important; /* remove blue outline */
+  color: #fff !important;
+}
+
+/* Active (when clicked) */
+.auth-submit-btn:active,
+.auth-submit-btn:active:focus {
+  background: #ff4c52 !important; /* slightly darker red on click */
+  border: none !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+
+
+.auth-toggle-btn {
+  color: #ff797e;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.auth-toggle-btn:hover {
+  color: #ff797ece;
+  text-decoration: underline;
+}
+
+/* Form Group Spacing */
+.auth-form .mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .auth-modal .modal-dialog {
+    margin: 0.5rem;
+    max-width: calc(100% - 1rem);
+  }
+
+  .auth-body {
+    padding: 20px;
+  }
+
+  .auth-header {
+    padding: 15px 20px;
+  }
+
+  .auth-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* Animation for modal entrance */
+.auth-modal .modal-dialog {
+  animation: slideInDown 0.4s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

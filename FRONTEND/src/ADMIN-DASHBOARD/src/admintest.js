@@ -8,6 +8,8 @@ import AddCategory from "./components/AddCategory/AddCategory";
 import Role from "./components/Role/Role";
 import { Outlet, Link } from "react-router-dom";
 import Productlist from "./components/AddCategory/productlist";
+import AddProduct from "./components/AddCategory/addproduct";
+import EditProduct from "./components/AddCategory/Editproduct";
 const AdminRoutes = () => {
   return (
     <>
@@ -16,13 +18,13 @@ const AdminRoutes = () => {
           <Route path="register" element={<Register />} />
           <Route path="products" element={<Products />} />
           <Route path="add-category" element={<AddCategory />} />
-          <Route
-            path="/admin/add-category/Productlistdash"
-            element={<Productlist />}
-          />
+          <Route path="add-category/Productlistdash/:categoryId" element={<Productlist />} />
+          <Route path="add-category/Productlistdash/:categoryId/add-product" element={<AddProduct />} />
+          <Route path="add-category/Productlistdash/:categoryId/edit-product/:productId" element={<EditProduct />} />
           <Route path="role" element={<Role />} />
         </Route>
       </Routes>
+
     </>
   );
 };

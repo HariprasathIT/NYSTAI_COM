@@ -95,7 +95,8 @@ const AdminDashboard = () => {
           className={isSidebarHidden ? "hide" : ""}
           style={{ backgroundColor: "#FFF" }}
         >
-          <Link to="/nystai-home">
+          {/* <Link to="/admin/register"> */}
+          <Link to="/">
             <a className=" mt-3 mb-3 d-flex align-items-center">
               <AsyncImage
                 src="/IMAGES-VIDEOS/B-IMG-PRODUCT-LAYOUT/Nystai-icons & resize images/trilogoproductdash.webp"
@@ -108,12 +109,18 @@ const AdminDashboard = () => {
             </a>
           </Link>
 
-          <div className="side-menu top mt-5">
+          <div className="side-menu top mt-3">
             <li>
               <NavLink
                 to="register"
                 style={({ isActive }) => ({
                   backgroundColor: isActive ? "#FFF3CA" : "#fff",
+                  color: isActive ? "#a57f00" : "#64748B",
+                  fontSize: "14px",
+                  height: "45px",
+                  display: "flex",
+                  alignItems: "center",
+                  paddingLeft: "12px",
                 })}
               >
                 <FontAwesomeIcon icon={faUserPlus} className="dash-icon" />
@@ -125,6 +132,12 @@ const AdminDashboard = () => {
                 to="products"
                 style={({ isActive }) => ({
                   backgroundColor: isActive ? "#FFF3CA" : "#fff",
+                  color: isActive ? "#a57f00" : "#64748B",
+                  fontSize: "14px",
+                  height: "45px",
+                  display: "flex",
+                  alignItems: "center",
+                  paddingLeft: "12px",
                 })}
               >
                 <FontAwesomeIcon icon={faBoxOpen} className="dash-icon" />
@@ -136,21 +149,16 @@ const AdminDashboard = () => {
                 to="add-category"
                 style={({ isActive }) => ({
                   backgroundColor: isActive ? "#FFF3CA" : "#fff",
+                  color: isActive ? "#a57f00" : "#64748B",
+                  fontSize: "14px",
+                  height: "45px",
+                  display: "flex",
+                  alignItems: "center",
+                  paddingLeft: "12px",
                 })}
               >
                 <FontAwesomeIcon icon={faTags} className="dash-icon" />
                 <span className="text">Add Category</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="role"
-                style={({ isActive }) => ({
-                  backgroundColor: isActive ? "#FFF3CA" : "#fff",
-                })}
-              >
-                <FontAwesomeIcon icon={faUserShield} className="dash-icon" />
-                <span className="text">Role</span>
               </NavLink>
             </li>
           </div>

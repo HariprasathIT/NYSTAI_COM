@@ -141,6 +141,9 @@ export default function Footerproduct() {
                 <li>
                   <Link to="/SUPPORT">FAQ & Help</Link>
                 </li>
+                <li>
+                  <Link to="/admin">Dashboard</Link>
+                </li>
                 {/* <li><Link to="/footblog">BLOG</Link></li> */}
               </ul>
               <ul class="box  p-0">

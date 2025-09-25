@@ -39,6 +39,7 @@ import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faBlog } from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
+import LogoutButton from "./logoutbutton";
 
 const Layout = () => {
   const location = useLocation();
@@ -429,6 +430,10 @@ const Layout = () => {
                 +91 81899 77700
               </a>
             </div>
+            <div className="" style={{display:"flex", justifyContent:"center"}}>
+              <LogoutButton />
+            </div>
+            
           </div>
           <p>
             <button class="backToTopBtn">
